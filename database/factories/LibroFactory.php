@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Editorial;
+use App\Models\Escritor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
