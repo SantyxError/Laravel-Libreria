@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Editorial extends Model
 {
     use HasFactory;
+
+    //Una editorial tiene varios libros
+    function libro()
+    {
+        return $this->belongsToMany(Libro::class);
+    }
 }
