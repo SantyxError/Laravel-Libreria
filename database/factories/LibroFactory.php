@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LibroFactory extends Factory
 {
-    protected $model = Libro::class;
 
     public function definition(): array
     {

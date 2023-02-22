@@ -9,6 +9,8 @@ use Ciri\dto\LibroDTO;
 use Ciri\service\impl\LibroService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class LibroController extends Controller
 {
@@ -33,9 +35,10 @@ class LibroController extends Controller
             null,
             $libroRequest->titulo,
             $libroRequest->anyo,
-            $libroRequest->director_id,
+            $libroRequest->escritor_id,
             $libroRequest->editorial_id
         );
+
         return response()->json($this->libroService->save($LibroDTO), 201);
     }
 
@@ -52,7 +55,7 @@ class LibroController extends Controller
             null,
             $libroRequest->titulo,
             $libroRequest->anyo,
-            $libroRequest->director_id,
+            $libroRequest->escritor_id,
             $libroRequest->editorial_id
         );
 

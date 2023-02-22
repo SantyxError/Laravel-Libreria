@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\EditorialController;
 use App\Http\Controllers\Api\EscritorController;
 use App\Http\Controllers\Api\LibroController;
+use App\Http\Controllers\Api\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

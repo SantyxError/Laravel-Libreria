@@ -12,8 +12,7 @@ class UserSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    { {
-            User::factory(2)->create();
-        }
+    {
+        User::factory(2)->create();
     }
 }

@@ -18,8 +18,8 @@ class LibroRequest extends FormRequest
         return [
             'titulo' => 'required',
             'anyo' => 'required|numeric|min:1890|max:2023',
-            'editorial_id' => 'required|numeric|min:60|max:220',
-            'director_id' => 'required|exists:directors,id'
+            'editorial_id' => 'required|exists:editorials,id',
+            'escritor_id' => 'required|exists:escritors,id'
         ];
     }
 
@@ -28,7 +28,7 @@ class LibroRequest extends FormRequest
         return [
             'titulo.required' => 'El título es obligatorio',
             'anyo.min' => 'El año no puede ser anterior a 1890',
-            //...
+            'editorial_id.exists' => 'Esa editorial no existe'
         ];
     }
 }

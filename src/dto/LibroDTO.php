@@ -17,7 +17,7 @@ class LibroDTO implements JsonSerializable
 
 
     //CONSTRUCTOR
-    public function construct__(?int $id, string $titulo, int $anyo, int $escritor_id, int $editorial_id)
+    public function __construct(?int $id, string $titulo, int $anyo, int $escritor_id, int $editorial_id)
     {
         $this->id = $id;
         $this->titulo = $titulo;
@@ -42,7 +42,7 @@ class LibroDTO implements JsonSerializable
         return $this->anyo;
     }
 
-    public function getescritor_id(): int
+    public function getEscritor_id(): int
     {
         return $this->escritor_id;
     }

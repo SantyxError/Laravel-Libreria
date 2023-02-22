@@ -41,14 +41,17 @@ class Handler extends ExceptionHandler
                         ['error' => 'Usuario no autenticado'],
                         401
                     );
+
+                else if (isset($exception))
+                    return response()->json(['error' => 'Error: ' .
+                        $exception->getMessage()], 500);
+
+
                 else if ($exception instanceof ValidationException)
                     return response()->json(
                         ['error' => 'Datos no válidos'],
                         400
                     );
-                else if (isset($exception))
-                    return response()->json(['error' => 'Error: ' .
-                        $exception->getMessage()], 500);
             }
         });
     }

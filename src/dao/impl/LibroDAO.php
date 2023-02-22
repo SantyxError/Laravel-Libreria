@@ -2,6 +2,9 @@
 
 namespace Ciri\dao\impl;
 
+use App\Models\Editorial;
+use App\Models\Escritor;
+use App\Models\Libro;
 use Ciri\dao\ILibroDAO;
 use Ciri\dto\LibroDTO;
 
@@ -51,11 +54,11 @@ class LibroDAO implements ILibroDAO
 
     public function update(LibroDTO $libro, $id): LibroDTO
     {
-        $libro = Libro::findOrFail($id);
-        $libro->titulo = $libro->getTitulo();
-        $libro->anyo = $libro->getAnyo();
-        $libro->save();
-        return new LibroDTO($libro->id, $libro->titulo, $libro->anyo, $libro->escritor_id, $libro->editorial_id);
+        $libro1 = Libro::findOrFail($id);
+        $libro1->titulo = $libro->getTitulo();
+        $libro1->anyo = $libro->getAnyo();
+        $libro1->save();
+        return new LibroDTO($libro1->id, $libro1->titulo, $libro1->anyo, $libro1->escritor_id, $libro1->editorial_id);
     }
 
     public function delete($id): bool

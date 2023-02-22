@@ -15,7 +15,7 @@ class UserFactory extends Factory
     {
         return [
             'login' => $this->faker->word,
-            'password' => bcrypt('1234')
+            'password' => bcrypt(1234)
         ];
     }
 

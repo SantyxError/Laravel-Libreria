@@ -6,15 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('libros', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->integer('anyo');;
+            $table->integer('anyo');
             $table->unsignedBigInteger('escritor_id')->unsigned();
             $table->unsignedBigInteger('editorial_id')->unsigned();
             $table->foreign('escritor_id')->references('id')->on('escritors');
@@ -23,9 +21,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('libros');

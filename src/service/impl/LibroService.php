@@ -13,7 +13,7 @@ class LibroService implements ILibroService
 
 
     //Creamos un consctructor donde creamos ese movieDAO
-    public function construct__()
+    public function __construct()
     {
         $this->libroDAO = new LibroDAO();
     }
